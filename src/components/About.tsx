@@ -100,9 +100,39 @@ const About = () => {
               </h4>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 I was born in <strong>Bhagalpur, Bihar</strong>, and earned my <strong>B.Tech in Electronics and Communication Engineering</strong>
-                from <strong>Haldia Institute of Technology, West Bengal</strong>. Despite coming from a core engineering background,
+                {" "}from <strong>Haldia Institute of Technology, West Bengal</strong>. Despite coming from a core engineering background,
                 I transitioned into software development early on and found it to be my true passion.
               </p>
+            </div>
+
+            {/* Education Section */}
+            <div className="space-y-4">
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
+                🎓 Education
+              </h4>
+              <div className="space-y-2">
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                  <h5 className="font-semibold text-gray-900 dark:text-white">B.Tech in Electronics and Communication Engineering</h5>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Haldia Institute of Technology, Haldia, West Bengal, India<br/>
+                    <span className="text-xs">08/2019 - 07/2023</span>
+                  </p>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                  <h5 className="font-semibold text-gray-900 dark:text-white">12th (BSEB Patna)</h5>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    B.P.Verma College, Kahalgaon Bhagalpur<br/>
+                    <span className="text-xs">04/2017 – 02/2018</span>
+                  </p>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                  <h5 className="font-semibold text-gray-900 dark:text-white">10th (BSEB Patna)</h5>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Sharda Pathshala H S, Kahalgaon Bhagalpur<br/>
+                    <span className="text-xs">04/2015 – 02/2016</span>
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="space-y-4">

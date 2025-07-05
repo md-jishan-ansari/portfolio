@@ -15,7 +15,7 @@ const experiences = [
     startDate: "June 2023",
     endDate: "Present",
     duration: "2+ years",
-    description: "Core team member at WisdmLabs, leading frontend and backend development for Moodle-based e-learning solutions. Drove major product initiatives, mentored interns, and delivered high-quality features with a focus on performance and user experience.",
+    description: "Core team member at WisdmLabs, leading frontend and backend development for Moodle-based e-learning solutions. Drove major product initiatives, mentored interns, and delivered high-quality features with a focus on performance and user experience.\n\nExplore my work on Moodle platforms: <a href=\"http://demo.tryremui.edwiser.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Edwiser RemUI Demo</a> | <a href=\"https://edwiser.org/page-builder-for-moodle/\" target=\"_blank\" rel=\"noopener noreferrer\">Edwiser Page Builder Demo</a>.",
     achievements: [
       "Developed and enhanced custom Moodle plugins and themes, improving platform performance and stability.",
       "Led frontend development of the Edwiser PageBuilder plugin and independently built the WhatsApp Notifications plugin (Node.js).",
@@ -48,7 +48,7 @@ const experiences = [
     startDate: "Mar 2022",
     endDate: "Nov 2022",
     duration: "9 months",
-    description: "KnockOnce is a digital solutions company based in Bengaluru, India. As a Full Stack Developer Intern, I worked on both new and existing projects, collaborating with cross-functional teams to deliver production-ready features and apps.",
+    description: "KnockOnce is a digital solutions company based in Bengaluru, India. As a Full Stack Developer Intern, I worked on both new and existing projects, collaborating with cross-functional teams to deliver production-ready features and apps.\n\nCollaborated with international teams on projects for <a href=\"https://www.zaio.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Zaio</a> (South Africa) and <a href=\"https://dy-namic.com/services.php\" target=\"_blank\" rel=\"noopener noreferrer\">Dynamic</a> (Dubai), contributing to real-world web solutions and branding platforms.",
     achievements: [
       "Developed two food delivery apps: ZooD and Bater-Mate using React.js and Node.js, handling both frontend and backend tasks.",
       "Added and modified core functionalities in several existing projects, improving performance and user experience.",
@@ -171,7 +171,28 @@ const Experience = () => {
                   </div>
                 </div>
                 <div className="font-semibold text-blue-700 dark:text-blue-300 mb-1">{exp.title}</div>
-                <div className="text-gray-600 dark:text-gray-300 mb-4 text-sm">{exp.description}</div>
+                <div
+                  className="text-gray-600 dark:text-gray-300 mb-4 text-sm"
+                  dangerouslySetInnerHTML={{ __html: exp.description }}
+                  style={{}}
+                />
+                <style jsx global>{`
+                  .text-gray-600 a {
+                    color: #2563eb;
+                    text-decoration: underline;
+                    font-weight: 500;
+                    transition: color 0.2s;
+                  }
+                  .text-gray-600 a:hover {
+                    color: #1e40af;
+                  }
+                  .dark .text-gray-300 a {
+                    color: #60a5fa;
+                  }
+                  .dark .text-gray-300 a:hover {
+                    color: #3b82f6;
+                  }
+                `}</style>
 
                 {/* Special Achievements (badges/callouts) */}
                 {exp.special && (

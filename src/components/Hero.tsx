@@ -43,10 +43,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             >
               Hi, I&apos;m{' '}
-              <span className="gradient-text">Jishan</span>
+              <span className="gradient-text">Md Jishan</span>
               <br />
               <span className="text-gray-600 dark:text-gray-300">
                 Building Digital

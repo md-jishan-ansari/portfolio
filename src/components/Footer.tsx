@@ -42,7 +42,7 @@ const Footer = () => {
             className="text-center md:text-left"
           >
             <Link href="/" className="text-2xl font-bold gradient-text mb-4 block">
-              Jishan
+              Md Jishan
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Full Stack Developer passionate about creating modern,

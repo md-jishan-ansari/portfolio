@@ -66,7 +66,7 @@ const Navbar = () => {
             className="flex-shrink-0"
           >
             <Link href="/" className="text-2xl font-bold gradient-text">
-              Jishan
+              Md Jishan
             </Link>
           </motion.div>
 
