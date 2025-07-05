@@ -86,11 +86,11 @@ const About = () => {
           >
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                Hello! I'm <span className="gradient-text">Md Jishan Ansari</span>
+                Hello! I&apos;m <span className="gradient-text">Md Jishan Ansari</span>
               </h3>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 A dedicated Full Stack Developer with expertise in Next.js, Node.js, and Moodle plugin/theme development.
-                I'm passionate about crafting robust, user-centric web applications that are both scalable and maintainable.
+                I&apos;m passionate about crafting robust, user-centric web applications that are both scalable and maintainable.
               </p>
             </div>
 
@@ -133,7 +133,7 @@ const About = () => {
               </h4>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 I strive to deliver <strong>high-quality solutions</strong>, continuously learn new technologies,
-                and take initiative in every project I'm involved in. My approach combines technical expertise
+                and take initiative in every project I&apos;m involved in. My approach combines technical expertise
                 with a strong focus on user experience and maintainable code architecture.
               </p>
             </div>

@@ -88,8 +88,8 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" />
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-3xl mx-auto">
-            I've worked with a wide range of technologies and tools to build modern, scalable web applications.
-            Here are the key skills I've developed throughout my career.
+            I&apos;ve worked with a wide range of technologies and tools to build modern, scalable web applications.
+            Here are the key skills I&apos;ve developed throughout my career.
           </p>
         </motion.div>
 

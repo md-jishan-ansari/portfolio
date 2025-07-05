@@ -104,7 +104,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" />
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-3xl mx-auto">
-            I'm always interested in new opportunities and exciting projects.
+            I&apos;m always interested in new opportunities and exciting projects.
             Whether you have a question or just want to say hi, feel free to reach out!
           </p>
         </motion.div>
@@ -119,11 +119,11 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Let's Connect
+                Let&apos;s Connect
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                I'm currently available for freelance work and full-time opportunities.
-                If you have a project that needs some creative thinking, I'd love to hear about it.
+                I&apos;m currently available for freelance work and full-time opportunities.
+                If you have a project that needs some creative thinking, I&apos;d love to hear about it.
               </p>
             </div>
 
@@ -193,8 +193,8 @@ const Contact = () => {
                 </h4>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                I'm currently accepting new projects and full-time opportunities.
-                Let's discuss how we can work together!
+                I&apos;m currently accepting new projects and full-time opportunities.
+                Let&apos;s discuss how we can work together!
               </p>
             </motion.div>
           </motion.div>

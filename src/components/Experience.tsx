@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { MapPin, Award, Users, Zap, Star, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import React from 'react';
 
 const experiences = [
   {
@@ -36,7 +37,7 @@ const experiences = [
       }
     ],
     skills: ["HTML", "CSS", "SCSS", "JavaScript", "jQuery", "Node.js", "Express.js", "PHP", "MySQL", "PostgreSQL", "Moodle", "UI/UX", "Client Communication"],
-    icon: 'wisdmlabs',
+    icon: 'wisdmlabs' as string | React.ElementType,
     featured: true
   },
   {
@@ -56,7 +57,7 @@ const experiences = [
       "Gained hands-on experience with Bootstrap, React.js, and Node.js in a fast-paced, collaborative environment."
     ],
     skills: ["Bootstrap", "React.js", "Node.js", "Team Collaboration", "Agile", "UI Implementation"],
-    icon: 'knockonce',
+    icon: 'knockonce' as string | React.ElementType,
   }
 ];
 
@@ -100,10 +101,6 @@ const Experience = () => {
         {/* Cards column only, no timeline border */}
         <div className="flex flex-col gap-16">
           {experiences.map((exp, idx) => {
-            let IconComp: React.ElementType | null = null;
-            if (typeof exp.icon === 'function') {
-              IconComp = exp.icon;
-            }
             return (
               <motion.div
                 key={exp.company + exp.title}
@@ -135,8 +132,8 @@ const Experience = () => {
                         height={32}
                         className="rounded-full object-cover"
                       />
-                    ) : (IconComp && typeof IconComp === 'function' ? (
-                      <IconComp className="h-6 w-6 text-white" />
+                    ) : (typeof exp.icon === 'function' ? (
+                      React.createElement(exp.icon, { className: "h-6 w-6 text-white" })
                     ) : null)}
                   </span>
                 </div>
@@ -160,8 +157,8 @@ const Experience = () => {
                           height={20}
                           className="rounded-full object-cover"
                         />
-                      ) : (IconComp && typeof IconComp === 'function' ? (
-                        <IconComp className="h-5 w-5 text-white" />
+                      ) : (typeof exp.icon === 'function' ? (
+                        React.createElement(exp.icon, { className: "h-5 w-5 text-white" })
                       ) : null)}
                     </span>
                     <span className="font-bold text-lg text-gray-900 dark:text-white">{exp.company}</span>
