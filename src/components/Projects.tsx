@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Play, Code, Palette, Mail } from 'lucide-react';
+import { ExternalLink, Github, Code, Palette, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -12,16 +13,16 @@ const Projects = () => {
 
   const projects = [
     {
-      slug: "ecommerse",
-      title: "Ecommerse",
-      description: "A modern, full-featured e-commerce platform with admin dashboard, secure authentication, Stripe-powered checkout, and responsive UI.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      slug: "technotes4u",
+      title: "TechNotes4U",
+      description: "A modern blogging and knowledge-sharing platform for developers with advanced content management and community features.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-      liveUrl: "https://ecommers.technotes4u.com/",
-      githubUrl: "https://github.com/yourusername/ecommerse",
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma ORM", "NextAuth.js", "Stripe", "MUI", "Chart.js"],
-      features: ["Authentication & User Management", "Product Catalog & Management", "Shopping Cart & Checkout", "Order Management", "Admin Dashboard & Analytics"],
-      category: "E-commerce"
+      liveUrl: "https://technotes4u.com/",
+      githubUrl: "https://github.com/yourusername/technotes4u",
+      technologies: ["Next.js", "React", "Redux Toolkit", "Node.js", "Express", "Prisma ORM", "JWT", "Google OAuth", "MDX"],
+      features: ["Blog Creation & Publishing", "Comments & Community", "Admin Panel & Moderation", "SEO Optimization", "User Management"],
+      category: "Blog Platform"
     },
     {
       slug: "shantailor",
@@ -36,28 +37,16 @@ const Projects = () => {
       category: "Business Platform"
     },
     {
-      slug: "ewm-agency",
-      title: "EWM Agency",
-      description: "A modern, animated company website for a Swiss-based digital agency with advanced frontend animations and professional presentation.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      slug: "ecommerse",
+      title: "Ecommerse",
+      description: "A modern, full-featured e-commerce platform with admin dashboard, secure authentication, Stripe-powered checkout, and responsive UI.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-      liveUrl: "https://nextjs-project-two-liart.vercel.app/",
-      githubUrl: "https://github.com/yourusername/ewm-agency",
-      technologies: ["Next.js", "React", "Framer Motion", "Material-UI", "React Intersection Observer", "React Multi Carousel"],
-      features: ["Animated Hero Section", "Service Showcase", "Portfolio/Work Page", "Blog & Contact Pages", "Advanced Animation System"],
-      category: "Agency Website"
-    },
-    {
-      slug: "technotes4u",
-      title: "TechNotes4U",
-      description: "A modern blogging and knowledge-sharing platform for developers with advanced content management and community features.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-      liveUrl: "https://technotes4u.com/",
-      githubUrl: "https://github.com/yourusername/technotes4u",
-      technologies: ["Next.js", "React", "Redux Toolkit", "Node.js", "Express", "Prisma ORM", "JWT", "Google OAuth", "MDX"],
-      features: ["Blog Creation & Publishing", "Comments & Community", "Admin Panel & Moderation", "SEO Optimization", "User Management"],
-      category: "Blog Platform"
+      liveUrl: "https://ecommers.technotes4u.com/",
+      githubUrl: "https://github.com/yourusername/ecommerse",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma ORM", "NextAuth.js", "Stripe", "MUI", "Chart.js"],
+      features: ["Authentication & User Management", "Product Catalog & Management", "Shopping Cart & Checkout", "Order Management", "Admin Dashboard & Analytics"],
+      category: "E-commerce"
     },
     {
       slug: "gallery",
@@ -82,6 +71,18 @@ const Projects = () => {
       technologies: ["React", "Material-UI", "Redux", "Node.js", "Express", "MongoDB", "JWT", "Cloudinary"],
       features: ["Memory Creation & Management", "Social Interaction", "Discovery & Navigation", "User Experience", "Content Management"],
       category: "Social Media"
+    },
+    {
+      slug: "ewm-agency",
+      title: "EWM Agency",
+      description: "A modern, animated company website for a Swiss-based digital agency with advanced frontend animations and professional presentation.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+      liveUrl: "https://nextjs-project-two-liart.vercel.app/",
+      githubUrl: "https://github.com/yourusername/ewm-agency",
+      technologies: ["Next.js", "React", "Framer Motion", "Material-UI", "React Intersection Observer", "React Multi Carousel"],
+      features: ["Animated Hero Section", "Service Showcase", "Portfolio/Work Page", "Blog & Contact Pages", "Advanced Animation System"],
+      category: "Agency Website"
     }
   ];
 
@@ -108,7 +109,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -140,24 +141,21 @@ const Projects = () => {
             >
               {/* Project Image */}
               <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-3 shadow-lg"
-                    onClick={() => {
-                      // Handle video modal
-                      console.log(`Play demo for ${project.title}`);
-                    }}
-                  >
-                    <Play className="h-6 w-6 text-gray-900" />
-                  </motion.button>
-                </div>
+                <motion.a
+                  href={`/projects/${project.slug}`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="block cursor-pointer"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width="500"
+                    height="500"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    unoptimized
+                  />
+                </motion.a>
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
                     {project.category}
@@ -166,10 +164,17 @@ const Projects = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {project.title}
-                </h3>
+              <div className="p-3 sm:p-6 flex flex-col h-[calc(100%-12rem)]">
+                <motion.a
+                  href={`/projects/${project.slug}`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="cursor-pointer"
+                >
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                </motion.a>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
@@ -219,14 +224,14 @@ const Projects = () => {
                 </div>
 
                 {/* Project Links */}
-                <div className="flex space-x-3">
+                <div className="flex flex-wrap gap-3 mt-auto">
                   <motion.a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg text-center hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                    className="flex-1 bg-gradient-to-r min-w-[150px] from-blue-600 to-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg text-center hover:shadow-lg transition-all duration-300 flex items-center justify-center"
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />
                     Live Demo
@@ -245,7 +250,7 @@ const Projects = () => {
                     href={`/projects/${project.slug}`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-300 flex items-center justify-center"
+                    className="ml-auto bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-300 flex items-center justify-center"
                   >
                     Details
                   </motion.a>

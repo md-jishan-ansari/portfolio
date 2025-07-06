@@ -64,12 +64,8 @@ export default function MemoriesProjectPage() {
         'MongoDB & Mongoose (NoSQL database, schema validation)',
         'JWT Authentication (secure sessions)',
         'Cloudinary (image storage, optimization)',
-        'Multer (file upload handling)',
         'Nodemailer (email services)',
-        'bcryptjs (password hashing)',
-        'React Router (client-side routing)',
-        'Moment.js (date/time formatting)',
-        'React Toastify (notifications)'
+        'bcryptjs (password hashing)'
       ]}
       security={[
         'JWT authentication with automatic token refresh and validation',

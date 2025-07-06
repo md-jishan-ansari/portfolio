@@ -62,15 +62,11 @@ export default function TechNotes4UProjectPage() {
       technologies={[
         'Next.js & React (frontend, SSR, SEO, UI)',
         'Tailwind CSS (responsive styling, dark/light mode)',
+        'TypeScript (type safety)',
         'Redux Toolkit (state management)',
         'Node.js & Express (backend API, modular architecture)',
         'Prisma ORM (database access, migrations)',
         'JWT Authentication & Google OAuth (secure, stateless sessions, role-based access)',
-        'MDX & Rich Text Editors (blog editing, media uploads)',
-        'Nodemailer (email verification, password reset, notifications)',
-        'Image optimization (responsive uploads, delivery)',
-        'SEO & Analytics (meta tags, Open Graph, Google Analytics)',
-        'Caching (performance, reduced database load)'
       ]}
       security={[
         'JWT & OAuth authentication with role-based access control',
@@ -81,6 +77,7 @@ export default function TechNotes4UProjectPage() {
         'Frontend: code splitting, lazy loading, memoization, debounced search',
         'Backend: database indexing, connection pooling, multi-level caching',
         'Image optimization and responsive delivery',
+        'Caching (performance, reduced database load)',
         'Comprehensive error handling: duplicate email prevention, email verification, invalid credentials, OAuth account linking, password management, profile updates, draft limits, content validation, publishing workflow, ownership protection, dependency checks, asset management, reply depth limitation, ownership verification, dependency protection, pagination, form validation, error boundaries, network resilience, user experience, fallback handling, data integrity, optimistic updates, cache management'
       ]}
     />

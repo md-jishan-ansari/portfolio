@@ -74,22 +74,14 @@ export default function EWMProjectPage() {
         'Next.js 12.1.4 (SSR, routing, SEO)',
         'React 18.0.0 (hooks, functional components)',
         'Framer Motion 6.2.10 (advanced animation)',
-        'Material-UI (MUI) 5.6.1 (UI components, design system)',
-        'React Intersection Observer 8.34.0 (scroll-triggered animations, lazy loading)',
-        'React Multi Carousel 2.8.0 (responsive carousels)',
-        'React Scroll 1.8.7 (smooth navigation)',
-        'CSS Modules (scoped styling)',
-        'Custom CSS (tailored animations, responsive design)'
+        'Material-UI (MUI) 5.6.1 (UI components, design system)'
       ]}
       security={[
         'Intersection Observer for efficient scroll detection',
         'Lazy loading for images and components',
-        'Optimized bundles with Next.js code splitting',
         'Scoped CSS Modules for maintainable styling',
         'Performance-optimized animation rendering',
-        'Responsive design with mobile-first approach',
-        'Custom error pages and graceful fallbacks',
-        'Accessibility and touch-friendly navigation'
+        'Responsive design with mobile-first approach'
       ]}
     />
   );

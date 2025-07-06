@@ -63,13 +63,7 @@ export default function EcommerseProjectPage() {
         'Prisma ORM (database access, migrations)',
         'NextAuth.js (authentication, Google OAuth, JWT sessions, role-based access)',
         'Stripe (secure payment processing, checkout)',
-        'Chart.js & react-chartjs-2 (analytics, admin dashboard charts)',
-        'React Hook Form & Zod (form management, validation)',
         'Axios (API requests)',
-        'React Toastify (user notifications)',
-        'Moment.js (date formatting)',
-        'Lodash (utility functions)',
-        'Sharp (image processing)'
       ]}
       security={[
         'Input validation and sanitization with Zod and React Hook Form',

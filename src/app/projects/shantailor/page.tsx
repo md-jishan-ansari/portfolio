@@ -59,13 +59,11 @@ export default function ShanTailorProjectPage() {
       technologies={[
         'Next.js & React (frontend, SSR, SEO, UI)',
         'Tailwind CSS (responsive styling, dark/light mode)',
+        'TypeScript (type safety)',
         'Redux Toolkit (state management)',
         'Node.js & Express (backend API, modular architecture)',
         'Prisma ORM (PostgreSQL database access, migrations)',
-        'JWT Authentication (secure, stateless sessions, role-based access)',
-        'Nodemailer (email verification, password reset, notifications)',
-        'Stripe (payment integration for premium features)',
-        'Image upload & optimization (fast, responsive image delivery)'
+        'JWT Authentication (secure, stateless sessions, role-based access)'
       ]}
       security={[
         'JWT authentication and role-based access control',
