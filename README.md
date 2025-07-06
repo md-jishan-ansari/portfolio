@@ -11,6 +11,7 @@ A modern, responsive portfolio website built with Next.js, showcasing my skills,
 - **SEO Optimized**: Meta tags and structured data for better search visibility
 - **Performance**: Optimized for fast loading and smooth interactions
 - **Accessibility**: WCAG compliant with proper semantic HTML
+- **Contact Form**: Functional contact form with email notifications
 
 ## 🛠️ Technologies Used
 
@@ -21,6 +22,9 @@ A modern, responsive portfolio website built with Next.js, showcasing my skills,
 - **Tailwind CSS** - Utility-first CSS framework
 - **Framer Motion** - Animation library
 - **Lucide React** - Icon library
+
+### Backend
+- **Nodemailer** - Email sending functionality
 
 ### Development Tools
 - **ESLint** - Code linting
@@ -133,7 +137,14 @@ Create a `.env.local` file for any environment-specific variables:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
 ```
+
+**Note**: For the contact form to work, you need to:
+1. Enable 2-factor authentication on your Gmail account
+2. Generate an App Password from Google Account settings
+3. Use the App Password in the `EMAIL_PASS` environment variable
 
 ### SEO Configuration
 Update metadata in `src/app/layout.tsx`:
