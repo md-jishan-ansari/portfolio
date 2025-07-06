@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Award, Code, Users, Zap } from 'lucide-react';
+import { Award, Code, Users, Zap, Download, FileText } from 'lucide-react';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -226,16 +226,141 @@ const About = () => {
             <div className="text-center">
               <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Database</h4>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                MySQL, PostgreSQL
+                PostgreSQL, MongoDB
               </p>
             </div>
             <div className="text-center">
               <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Specialization</h4>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Moodle plugin/theme development
+                MERN stack, Moodle plugin/theme development
               </p>
             </div>
           </div>
+        </motion.div>
+
+        {/* CV Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-16"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              📄 CV
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Take a look at my detailed CV to learn more about my experience, skills, and achievements.
+            </p>
+          </div>
+
+          {/* CV Preview - Full Width */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-8"
+          >
+            <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <FileText className="h-6 w-6 text-blue-600" />
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    CV Preview
+                  </h4>
+                </div>
+                <a
+                  href="/MdJishanAnsari.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center space-x-1"
+                >
+                  <span>Open in new tab</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div className="h-[700px] md:h-[900px] max-h-[75vh] bg-gray-100 dark:bg-gray-900 relative">
+              <iframe
+                src="/MdJishanAnsari.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                className="w-full h-full border-0"
+                title="CV Preview"
+              />
+            </div>
+          </motion.div>
+
+          {/* Download Section - Centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8">
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto">
+                  <Download className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Download My CV
+                </h4>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Get a copy of my complete CV in PDF format for your records.
+                </p>
+                <div className="space-y-3">
+                  <a
+                    href="/MdJishanAnsari.pdf"
+                    download="MdJishanAnsari_CV.pdf"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <Download className="h-5 w-5 mr-2" />
+                    Download PDF
+                  </a>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    File size: 185KB • Last updated: {new Date().toLocaleDateString()}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Info Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                <h5 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
+                  Experience
+                </h5>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">
+                  2+ Years Full Stack Development
+                </p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                <h5 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
+                  Education
+                </h5>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">
+                  B.Tech ECE (2019-2023)
+                </p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                <h5 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
+                  Location
+                </h5>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">
+                  Bhagalpur, Bihar, India
+                </p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+                <h5 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
+                  Availability
+                </h5>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">
+                  Open to opportunities
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
