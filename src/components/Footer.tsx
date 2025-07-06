@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -10,22 +10,22 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/md-jishan-ansari',
       label: 'GitHub'
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com/in/yourusername',
+      href: 'https://www.linkedin.com/in/md-jishan-ansari-849191202/',
       label: 'LinkedIn'
     },
-    {
-      icon: Twitter,
-      href: 'https://twitter.com/yourusername',
-      label: 'Twitter'
-    },
+    // {
+    //   icon: Twitter,
+    //   href: 'https://twitter.com/yourusername',
+    //   label: 'Twitter'
+    // },
     {
       icon: Mail,
-      href: 'mailto:jishan.ansari@example.com',
+      href: 'mailto:mdjishanansari2000@gmail.com',
       label: 'Email'
     }
   ];

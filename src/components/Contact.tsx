@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -31,13 +31,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210"
+      value: "+91 9523587386",
+      href: "tel:+919523587386"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Pune, Maharashtra, India",
+      value: "Bhagalpur, Bihar, India",
       href: "#"
     }
   ];
@@ -46,21 +46,21 @@ const Contact = () => {
     {
       icon: Github,
       name: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/md-jishan-ansari",
       color: "hover:text-gray-900 dark:hover:text-white"
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://www.linkedin.com/in/md-jishan-ansari-849191202/",
       color: "hover:text-blue-600"
-    },
-    {
-      icon: Twitter,
-      name: "Twitter",
-      href: "https://twitter.com/yourusername",
-      color: "hover:text-blue-400"
     }
+    // {
+    //   icon: Twitter,
+    //   name: "Twitter",
+    //   href: "https://twitter.com/yourusername",
+    //   color: "hover:text-blue-400"
+    // }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -318,7 +318,7 @@ const Contact = () => {
                   required
                   rows={6}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 resize-none"
-                  placeholder="Tell me about your project or just say hello!"
+                  placeholder="Share your project details, job opportunities, or any questions you have!"
                 />
               </div>
               <motion.button

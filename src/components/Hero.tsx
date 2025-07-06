@@ -1,14 +1,19 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Download, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Download, Mail, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 
 const Hero = () => {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/md-jishan-ansari', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/md-jishan-ansari-849191202/', label: 'LinkedIn' },
+    {
+      icon: Mail,
+      href: 'mailto:mdjishanansari2000@gmail.com',
+      label: 'Email'
+    }
+    // { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
   ];
 
   return (
