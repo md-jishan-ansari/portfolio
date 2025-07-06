@@ -48,6 +48,37 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900 min-h-screen">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Breadcrumbs */}
+        <nav className="mb-8" aria-label="Breadcrumb">
+          <ol className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+            <li>
+              <Link
+                href="/"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <svg className="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              </svg>
+              <Link
+                href="/projects"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                Projects
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <svg className="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-900 dark:text-white font-medium">{title}</span>
+            </li>
+          </ol>
+        </nav>
+
         {/* Video Section */}
         <div className="mb-10 flex flex-col items-center">
           <div className="w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-lg">
