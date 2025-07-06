@@ -271,7 +271,7 @@ const Projects = () => {
             Want to see more of my work or discuss a potential collaboration?
           </p>
           <motion.a
-            href="#contact"
+            href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"

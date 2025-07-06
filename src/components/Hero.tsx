@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Download, Mail, Github, Linkedin } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Hero = () => {
@@ -24,8 +25,8 @@ const Hero = () => {
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
       }}></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 mt-12 lg:mt-6 relative z-10">
+        <div className="flex max-lg:flex-wrap-reverse max-lg:justify-center gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -137,10 +138,12 @@ const Hero = () => {
               {/* Profile Image */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl"
+                className="relative w-80 h-80 lg:h-[500px] lg:w-[500px] rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                <Image
+                  src="/images/profile.jpg"
+                  width="700"
+                  height="700"
                   alt="Md Jishan Ansari"
                   className="w-full h-full object-cover"
                 />

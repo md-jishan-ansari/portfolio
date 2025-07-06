@@ -107,7 +107,7 @@ const Experience = () => {
                 initial={{ opacity: 0, x: 40 }}
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
                 transition={{ duration: 0.7, delay: idx * 0.15 }}
-                className={`relative max-w-3xl w-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-10 border ${exp.featured ? 'border-blue-500 dark:border-blue-400' : 'border-gray-200 dark:border-gray-800'} mx-auto`}
+                className={`relative max-w-3xl w-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-4 md:p-10 border ${exp.featured ? 'border-blue-500 dark:border-blue-400' : 'border-gray-200 dark:border-gray-800'} mx-auto`}
               >
                 {/* Timeline date/duration above card for all screens */}
                 <div className="flex flex-col items-center mb-4">
