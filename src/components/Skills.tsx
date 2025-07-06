@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
 
 const Skills = () => {
-  const [ref, inView] = useInView({
+  const [ref, inView] = useScrollAwareInView({
     triggerOnce: true,
     threshold: 0.1,
   });

@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
 import { Award, Code, Users, Zap, Download, FileText } from 'lucide-react';
 
 const About = () => {
-  const [ref, inView] = useInView({
+  const [ref, inView] = useScrollAwareInView({
     triggerOnce: true,
     threshold: 0.1,
   });

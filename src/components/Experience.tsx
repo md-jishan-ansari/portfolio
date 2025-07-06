@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
 import { MapPin, Award, Users, Zap, Star, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
@@ -80,7 +80,7 @@ const highlights = [
 ];
 
 const Experience = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref, inView] = useScrollAwareInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
