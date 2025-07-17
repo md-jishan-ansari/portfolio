@@ -165,8 +165,10 @@ const WorkExperience = ({ inView }: { inView: any }) => {
                                 {exp.special.map((s) => (
                                     <div key={s.label} className="flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg px-3 py-2">
                                         <s.icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                                        <span className="font-semibold text-blue-800 dark:text-blue-300 text-xs">{s.label}</span>
-                                        <span className="text-xs text-gray-600 dark:text-gray-300 ml-2">{s.description}</span>
+                                        <div className="flex flex-wrap gap-x-2 gap-y-1">
+                                            <span className="font-semibold text-blue-800 dark:text-blue-300 text-xs">{s.label}</span>
+                                            <span className="text-xs text-gray-600 dark:text-gray-300">{s.description}</span>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
