@@ -12,6 +12,13 @@ const ScrollRestorationProvider = ({ children }: ScrollRestorationProviderProps)
   const pathname = usePathname();
 
   useEffect(() => {
+    // Set browser scroll restoration to manual
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
     // On route change, scroll to top
     window.scrollTo(0, 0);
     hasRestored.current = false; // Reset restoration flag for new page
@@ -25,10 +32,11 @@ const ScrollRestorationProvider = ({ children }: ScrollRestorationProviderProps)
       const savedScrollPosition = sessionStorage.getItem('scrollPosition');
       if (savedScrollPosition && !hasRestored.current) {
         const scrollY = parseInt(savedScrollPosition, 10);
-        requestAnimationFrame(() => {
+        // Wait for layout/animations to settle before restoring scroll
+        setTimeout(() => {
           window.scrollTo(0, scrollY);
           hasRestored.current = true;
-        });
+        }, 80); // 80ms delay for smoother restoration
       }
     };
 
