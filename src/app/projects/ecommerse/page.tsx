@@ -7,7 +7,7 @@ export default function EcommerseProjectPage() {
       videoSrc="/videos/ecommerse.mp4"
       videoPoster="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       liveDemoUrl="https://ecommers.technotes4u.com/"
-      githubUrl="https://github.com/yourusername/ecommerse"
+      githubUrl="https://github.com/md-jishan-ansari/ecommers"
       title="Ecommerse"
       overview="Ecommerse is a modern, full-featured e-commerce platform built with a focus on performance, security, and a seamless shopping experience. It features a robust admin dashboard, secure authentication, Stripe-powered checkout, and a modern, responsive UI."
       features={[
@@ -71,11 +71,9 @@ export default function EcommerseProjectPage() {
         'Secure authentication with NextAuth.js (JWT, OAuth)',
         'Role-based access control for admin/user features',
         'PCI-compliant Stripe payment processing',
-        'Optimized queries and caching for fast performance',
         'Admin-only features protected at UI and API levels',
         'User-friendly error messages and toast notifications',
         'Efficient state management and data access',
-        'Image upload validation and optimization',
         'Session management and secure token storage'
       ]}
     />

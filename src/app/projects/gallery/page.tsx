@@ -7,7 +7,7 @@ export default function GalleryProjectPage() {
       videoSrc="https://www.youtube.com/embed/-EgHDS9YWWg?si=8BcKF1vDwFiQ9gGn"
       videoPoster="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       liveDemoUrl="https://gallery.technotes4u.com/"
-      githubUrl="https://github.com/yourusername/gallery"
+      githubUrl="https://github.com/md-jishan-ansari/gallery"
       title="Gallery"
       overview="Gallery is a modern, user-friendly web application for managing personal photo collections. It allows users to securely upload, view, organize, and share images, with a responsive interface and robust backend features."
       features={[
@@ -47,12 +47,8 @@ export default function GalleryProjectPage() {
       ]}
       security={[
         'Input validation and sanitization for email and image uploads',
-        'Session security via PHP sessions and authentication checks',
         'File handling with automatic renaming and secure storage',
-        'Encrypted sharing links using OpenSSL',
-        'AJAX pagination for fast page loads',
-        'Database indexes for improved query performance',
-        'Custom error pages and user-friendly feedback'
+        'Encrypted sharing links using OpenSSL'
       ]}
     />
   );

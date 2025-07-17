@@ -5,7 +5,7 @@ export default function EWMProjectPage() {
     <ProjectDetailPage
       videoType="none"
       liveDemoUrl="https://nextjs-project-two-liart.vercel.app/"
-      githubUrl="https://github.com/yourusername/ewm-agency"
+      githubUrl="https://github.com/md-jishan-ansari/nextjs-project"
       title="EWM Agency"
       overview="EWM Agency Website is a modern, animated company website for a Swiss-based digital agency specializing in branding, web design, web development, and digital marketing. It showcases advanced frontend animations, responsive design, and professional agency presentation."
       features={[

@@ -28,7 +28,7 @@ export interface ProjectDetailPageProps {
   videoSrc?: string;
   videoPoster?: string;
   liveDemoUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
   title: string;
   overview: string;
   features: FeatureSection[];
@@ -84,7 +84,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
 
         {/* Video Section */}
         {videoType !== 'none' && videoSrc && (
-          <div className="mb-8 sm:mb-10 flex flex-col items-center">
+          <div className="flex flex-col items-center">
             <div className="w-full aspect-video mb-4 sm:mb-6 rounded-xl overflow-hidden shadow-lg">
               {videoType === 'local' ? (
                 <video
@@ -105,12 +105,12 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 />
               ) : null}
             </div>
-            <div className="flex gap-3 sm:gap-4">
-              <Link href={liveDemoUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2 px-4 sm:px-6 rounded-lg shadow hover:shadow-lg transition-all text-sm sm:text-base">Live Demo</Link>
-              <Link href={githubUrl} target="_blank" rel="noopener noreferrer" className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold py-2 px-4 sm:px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all text-sm sm:text-base">GitHub</Link>
-            </div>
           </div>
         )}
+            <div className="flex justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 ">
+              <Link href={liveDemoUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2 px-4 sm:px-6 rounded-lg shadow hover:shadow-lg transition-all text-sm sm:text-base">Live Demo</Link>
+              {githubUrl && <Link href={githubUrl} target="_blank" rel="noopener noreferrer" className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold py-2 px-4 sm:px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all text-sm sm:text-base">GitHub</Link>}
+            </div>
 
         <div className="max-w-4xl mx-auto">
 

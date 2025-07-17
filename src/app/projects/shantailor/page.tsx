@@ -6,8 +6,7 @@ export default function ShanTailorProjectPage() {
       videoType="youtube"
       videoSrc="https://www.youtube.com/embed/1HVlkg9jObQ?si=QqfhUgpB4KwF82Z4"
       videoPoster="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-      liveDemoUrl="https://www.sulekha.com/shan-tailors-madangir-delhi-3676083-contact-address"
-      githubUrl="https://github.com/yourusername/shantailor"
+      liveDemoUrl="http://shantailors.in"
       title="ShanTailor"
       overview="ShanTailor is a modern, full-featured custom tailoring and design management platform. It offers a robust backend API and a beautiful, responsive frontend, supporting user authentication, design browsing, category management, pricing tools, and admin features for a seamless tailoring experience."
       features={[
@@ -69,7 +68,6 @@ export default function ShanTailorProjectPage() {
       security={[
         'JWT authentication and role-based access control',
         'Input validation and sanitization for all forms and uploads',
-        'Rate limiting to prevent abuse of sensitive endpoints',
         'Caching for frequently accessed data',
         'Duplicate email prevention and email verification',
         'API error interception and toast notifications',

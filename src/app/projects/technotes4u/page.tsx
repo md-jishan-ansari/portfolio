@@ -7,7 +7,6 @@ export default function TechNotes4UProjectPage() {
       videoSrc="https://www.youtube.com/embed/uct33TPRZho?si=zLyZKq51THjBC9ro"
       videoPoster="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       liveDemoUrl="https://technotes4u.com/"
-      githubUrl="https://github.com/yourusername/technotes4u"
       title="TechNotes4U"
       overview="TechNotes4U is a modern, full-featured blogging and knowledge-sharing platform designed for developers and tech enthusiasts. It combines a beautiful, responsive UI with robust backend features, advanced content management, and a secure, scalable architecture."
       features={[
@@ -41,7 +40,7 @@ export default function TechNotes4UProjectPage() {
           items: [
             'Admins can view, approve/reject, unpublish, and mark blogs as featured.',
             'User management: View all users, their roles, blog counts, and comment activity.',
-            'Analytics: Charts and tables for blog activity, user engagement, and platform growth.',
+            'Analytics: Chart shows view counts for a given time interval; tables for user and blog data.',
             'Latest activity: See the latest comments and message notes across the platform.'
           ]
         },
@@ -72,14 +71,24 @@ export default function TechNotes4UProjectPage() {
       security={[
         'JWT & OAuth authentication with role-based access control',
         'Input validation and sanitization for all forms and uploads',
-        'File upload security and type/size validation',
-        'Rate limiting to prevent abuse of sensitive endpoints',
         'Session management and token refresh/logout',
         'Frontend: code splitting, lazy loading, memoization, debounced search',
-        'Backend: database indexing, connection pooling, multi-level caching',
-        'Image optimization and responsive delivery',
         'Caching (performance, reduced database load)',
-        'Comprehensive error handling: duplicate email prevention, email verification, invalid credentials, OAuth account linking, password management, profile updates, draft limits, content validation, publishing workflow, ownership protection, dependency checks, asset management, reply depth limitation, ownership verification, dependency protection, pagination, form validation, error boundaries, network resilience, user experience, fallback handling, data integrity, optimistic updates, cache management'
+        'Comprehensive error handling:',
+        '  - Duplicate email prevention',
+        '  - Email verification',
+        '  - Invalid credentials',
+        '  - Password management',
+        '  - Draft limits',
+        '  - Content validation',
+        '  - Publishing workflow',
+        '  - Ownership protection',
+        '  - Dependency checks',
+        '  - Asset management',
+        '  - Reply depth limitation',
+        '  - Form validation',
+        '  - Fallback handling',
+        '  - Cache management'
       ]}
     />
   );

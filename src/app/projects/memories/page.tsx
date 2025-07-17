@@ -7,7 +7,7 @@ export default function MemoriesProjectPage() {
       videoSrc="/videos/memories.mp4"
       videoPoster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       liveDemoUrl="https://memories.technotes4u.com/"
-      githubUrl="https://github.com/yourusername/memories"
+      githubUrl="https://github.com/md-jishan-ansari/memories-frontend"
       title="Memories"
       overview="Memories is a modern social media platform for sharing and preserving personal memories through posts, images, and stories. It features a beautiful, responsive UI with robust backend functionality, real-time interactions, and secure user management."
       features={[
@@ -71,9 +71,6 @@ export default function MemoriesProjectPage() {
       security={[
         'JWT authentication with automatic token refresh and validation',
         'Password security with bcrypt hashing and salt rounds',
-        'Comprehensive input validation and sanitization',
-        'Secure image upload handling and type validation',
-        'CORS configuration for secure API communication',
         'Centralized error management and user-friendly messages',
         'Database security with schema validation and secure connections',
         'Cloudinary integration for secure image uploads',

@@ -17,11 +17,9 @@ const Projects = () => {
       title: "TechNotes4U",
       description: "A modern blogging and knowledge-sharing platform for developers with advanced content management and community features.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
       liveUrl: "https://technotes4u.com/",
-      githubUrl: "https://github.com/yourusername/technotes4u",
       technologies: ["Next.js", "React", "Redux Toolkit", "Node.js", "Express", "Prisma ORM", "JWT", "Google OAuth", "MDX"],
-      features: ["Blog Creation & Publishing", "Comments & Community", "Admin Panel & Moderation", "SEO Optimization", "User Management"],
+      features: ["Blog Creation & Publishing", "Like & Comments", "Admin Panel & Moderation", "SEO Optimization", "User Management"],
       category: "Blog Platform"
     },
     {
@@ -29,9 +27,7 @@ const Projects = () => {
       title: "ShanTailor",
       description: "A modern custom tailoring and design management platform with robust backend API and beautiful responsive frontend.",
       image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-      liveUrl: "https://www.sulekha.com/shan-tailors-madangir-delhi-3676083-contact-address",
-      githubUrl: "https://github.com/yourusername/shantailor",
+      liveUrl: "http://shantailors.in",
       technologies: ["Next.js", "React", "Redux Toolkit", "Node.js", "Express", "Prisma ORM", "JWT", "Stripe", "Nodemailer"],
       features: ["Authentication & User Management", "Design & Category Management", "Pricing Tools", "Service Offerings", "Admin Panel"],
       category: "Business Platform"
@@ -41,9 +37,8 @@ const Projects = () => {
       title: "Ecommerse",
       description: "A modern, full-featured e-commerce platform with admin dashboard, secure authentication, Stripe-powered checkout, and responsive UI.",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
       liveUrl: "https://ecommers.technotes4u.com/",
-      githubUrl: "https://github.com/yourusername/ecommerse",
+      githubUrl: "https://github.com/md-jishan-ansari/ecommers",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma ORM", "NextAuth.js", "Stripe", "MUI", "Chart.js"],
       features: ["Authentication & User Management", "Product Catalog & Management", "Shopping Cart & Checkout", "Order Management", "Admin Dashboard & Analytics"],
       category: "E-commerce"
@@ -53,9 +48,8 @@ const Projects = () => {
       title: "Gallery",
       description: "A user-friendly web application for managing personal photo collections with secure upload, view, organize, and share features.",
       image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
       liveUrl: "https://gallery.technotes4u.com/",
-      githubUrl: "https://github.com/yourusername/gallery",
+      githubUrl: "https://github.com/md-jishan-ansari/gallery",
       technologies: ["PHP", "MySQL", "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery"],
       features: ["Image Upload & Management", "Gallery Display", "Bin (Trash) System", "Image Sharing", "Responsive Design"],
       category: "Photo Management"
@@ -65,9 +59,8 @@ const Projects = () => {
       title: "Memories",
       description: "A modern social media platform for sharing and preserving personal memories through posts, images, and stories.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
       liveUrl: "https://memories.technotes4u.com/",
-      githubUrl: "https://github.com/yourusername/memories",
+      githubUrl: "https://github.com/md-jishan-ansari/memories-frontend",
       technologies: ["React", "Material-UI", "Redux", "Node.js", "Express", "MongoDB", "JWT", "Cloudinary"],
       features: ["Memory Creation & Management", "Social Interaction", "Discovery & Navigation", "User Experience", "Content Management"],
       category: "Social Media"
@@ -77,9 +70,8 @@ const Projects = () => {
       title: "EWM Agency",
       description: "A modern, animated company website for a Swiss-based digital agency with advanced frontend animations and professional presentation.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      demoVideo: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
       liveUrl: "https://nextjs-project-two-liart.vercel.app/",
-      githubUrl: "https://github.com/yourusername/ewm-agency",
+      githubUrl: "https://github.com/md-jishan-ansari/nextjs-project",
       technologies: ["Next.js", "React", "Framer Motion", "Material-UI", "React Intersection Observer", "React Multi Carousel"],
       features: ["Animated Hero Section", "Service Showcase", "Portfolio/Work Page", "Blog & Contact Pages", "Advanced Animation System"],
       category: "Agency Website"
@@ -236,16 +228,19 @@ const Projects = () => {
                     <ExternalLink className="h-4 w-4 mr-1" />
                     Live Demo
                   </motion.a>
-                  <motion.a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 flex items-center justify-center"
-                  >
-                    <Github className="h-4 w-4" />
-                  </motion.a>
+                  {project?.githubUrl && (
+                    <motion.a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 flex items-center justify-center"
+                    >
+                      <Github className="h-4 w-4" />
+                    </motion.a>
+                  )}
+
                   <motion.a
                     href={`/projects/${project.slug}`}
                     whileHover={{ scale: 1.05 }}
