@@ -3,8 +3,7 @@ import ProjectDetailPage from '@/components/ProjectDetailPage';
 export default function EWMProjectPage() {
   return (
     <ProjectDetailPage
-      videoSrc="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
-      videoPoster="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      videoType="none"
       liveDemoUrl="https://nextjs-project-two-liart.vercel.app/"
       githubUrl="https://github.com/yourusername/ewm-agency"
       title="EWM Agency"

@@ -3,7 +3,8 @@ import ProjectDetailPage from '@/components/ProjectDetailPage';
 export default function TechNotes4UProjectPage() {
   return (
     <ProjectDetailPage
-      videoSrc="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
+      videoType="youtube"
+      videoSrc="https://www.youtube.com/embed/uct33TPRZho?si=zLyZKq51THjBC9ro"
       videoPoster="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       liveDemoUrl="https://technotes4u.com/"
       githubUrl="https://github.com/yourusername/technotes4u"

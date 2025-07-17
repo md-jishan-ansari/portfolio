@@ -3,7 +3,8 @@ import ProjectDetailPage from '@/components/ProjectDetailPage';
 export default function MemoriesProjectPage() {
   return (
     <ProjectDetailPage
-      videoSrc="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
+      videoType="local"
+      videoSrc="/videos/memories.mp4"
       videoPoster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       liveDemoUrl="https://memories.technotes4u.com/"
       githubUrl="https://github.com/yourusername/memories"

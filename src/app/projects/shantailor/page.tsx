@@ -3,7 +3,8 @@ import ProjectDetailPage from '@/components/ProjectDetailPage';
 export default function ShanTailorProjectPage() {
   return (
     <ProjectDetailPage
-      videoSrc="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
+      videoType="youtube"
+      videoSrc="https://www.youtube.com/embed/1HVlkg9jObQ?si=QqfhUgpB4KwF82Z4"
       videoPoster="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       liveDemoUrl="https://www.sulekha.com/shan-tailors-madangir-delhi-3676083-contact-address"
       githubUrl="https://github.com/yourusername/shantailor"

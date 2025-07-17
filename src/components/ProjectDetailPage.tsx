@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 /*
 Props for ProjectDetailPage:
-- videoSrc: string
+- videoType: 'local' | 'youtube' | 'none'
+- videoSrc: string (URL or YouTube embed src)
 - videoPoster: string
 - liveDemoUrl: string
 - githubUrl: string
@@ -23,8 +24,9 @@ export interface FeatureSection {
 }
 
 export interface ProjectDetailPageProps {
-  videoSrc: string;
-  videoPoster: string;
+  videoType?: 'local' | 'youtube' | 'none';
+  videoSrc?: string;
+  videoPoster?: string;
   liveDemoUrl: string;
   githubUrl: string;
   title: string;
@@ -35,6 +37,7 @@ export interface ProjectDetailPageProps {
 }
 
 const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
+  videoType = 'local',
   videoSrc,
   videoPoster,
   liveDemoUrl,
@@ -80,20 +83,34 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
         </nav>
 
         {/* Video Section */}
-        <div className="mb-8 sm:mb-10 flex flex-col items-center">
-          <div className="w-full aspect-video mb-4 sm:mb-6 rounded-xl overflow-hidden shadow-lg">
-            <video
-              src={videoSrc}
-              controls
-              className="w-full h-full max-h-[75vh] object-cover bg-black"
-              poster={videoPoster}
-            />
+        {videoType !== 'none' && videoSrc && (
+          <div className="mb-8 sm:mb-10 flex flex-col items-center">
+            <div className="w-full aspect-video mb-4 sm:mb-6 rounded-xl overflow-hidden shadow-lg">
+              {videoType === 'local' ? (
+                <video
+                  src={videoSrc}
+                  controls
+                  className="w-full h-full max-h-[75vh] object-cover bg-black"
+                  poster={videoPoster}
+                />
+              ) : videoType === 'youtube' ? (
+                <iframe
+                  src={videoSrc}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full min-h-[300px] max-h-[75vh] bg-black"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              ) : null}
+            </div>
+            <div className="flex gap-3 sm:gap-4">
+              <Link href={liveDemoUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2 px-4 sm:px-6 rounded-lg shadow hover:shadow-lg transition-all text-sm sm:text-base">Live Demo</Link>
+              <Link href={githubUrl} target="_blank" rel="noopener noreferrer" className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold py-2 px-4 sm:px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all text-sm sm:text-base">GitHub</Link>
+            </div>
           </div>
-          <div className="flex gap-3 sm:gap-4">
-            <Link href={liveDemoUrl} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2 px-4 sm:px-6 rounded-lg shadow hover:shadow-lg transition-all text-sm sm:text-base">Live Demo</Link>
-            <Link href={githubUrl} target="_blank" rel="noopener noreferrer" className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold py-2 px-4 sm:px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all text-sm sm:text-base">GitHub</Link>
-          </div>
-        </div>
+        )}
 
         <div className="max-w-4xl mx-auto">
 

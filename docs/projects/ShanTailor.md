@@ -15,7 +15,6 @@ ShanTailor is a modern, full-featured custom tailoring and design management pla
 - **Prisma ORM**: Type-safe database access and migrations (PostgreSQL).
 - **JWT Authentication**: Secure, stateless user sessions and role-based access control.
 - **Nodemailer**: Email verification, password reset, and notifications.
-- **Stripe**: Payment integration for premium features or services.
 - **Image Upload & Optimization**: Fast, responsive image uploads and delivery.
 
 ---
