@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 
-import { MapPin, Award, Users, Zap, Star, TrendingUp } from 'lucide-react';
+import { MapPin, Star, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 import { Timeline, TimelineItem } from './Timeline';
 

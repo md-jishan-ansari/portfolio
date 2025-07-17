@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
+import Image from 'next/image';
 
 const Skills = () => {
   const [ref, inView] = useScrollAwareInView({
@@ -128,9 +129,11 @@ const Skills = () => {
                   >
                     <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center">
                       <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <img
+                        <Image
                           src={skill.icon}
                           alt={skill.name}
+                          width="48"
+                          height="48"
                           className="w-12 h-12 group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>

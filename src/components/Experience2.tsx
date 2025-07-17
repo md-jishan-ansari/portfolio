@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
-import { MapPin, Award, Users, Zap, Star, TrendingUp } from 'lucide-react';
-import Image from 'next/image';
+import { Award, Users, Zap } from 'lucide-react';
 import React from 'react';
 import WorkExperience from './WorkExperience';
 
