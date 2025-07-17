@@ -5,7 +5,7 @@ export default function MemoriesProjectPage() {
     <ProjectDetailPage
       videoType="local"
       videoSrc="/videos/memories.mp4"
-      videoPoster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      videoPoster="/images/memories.png"
       liveDemoUrl="https://memories.technotes4u.com/"
       githubUrl="https://github.com/md-jishan-ansari/memories-frontend"
       title="Memories"

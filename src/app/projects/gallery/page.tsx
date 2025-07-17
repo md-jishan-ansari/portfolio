@@ -5,7 +5,7 @@ export default function GalleryProjectPage() {
     <ProjectDetailPage
       videoType="youtube"
       videoSrc="https://www.youtube.com/embed/-EgHDS9YWWg?si=8BcKF1vDwFiQ9gGn"
-      videoPoster="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      videoPoster="/images/gallery.png"
       liveDemoUrl="https://gallery.technotes4u.com/"
       githubUrl="https://github.com/md-jishan-ansari/gallery"
       title="Gallery"

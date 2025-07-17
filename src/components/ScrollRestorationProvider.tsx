@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 interface ScrollRestorationProviderProps {
   children: React.ReactNode;
@@ -8,37 +9,35 @@ interface ScrollRestorationProviderProps {
 
 const ScrollRestorationProvider = ({ children }: ScrollRestorationProviderProps) => {
   const hasRestored = useRef(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Check if we're on the client side
+    // On route change, scroll to top
+    window.scrollTo(0, 0);
+    hasRestored.current = false; // Reset restoration flag for new page
+  }, [pathname]);
+
+  useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Get the saved scroll position
-    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+    // Restore scroll position only on popstate (back/forward)
+    const handlePopState = () => {
+      const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+      if (savedScrollPosition && !hasRestored.current) {
+        const scrollY = parseInt(savedScrollPosition, 10);
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollY);
+          hasRestored.current = true;
+        });
+      }
+    };
 
-    if (savedScrollPosition && !hasRestored.current) {
-      const scrollY = parseInt(savedScrollPosition, 10);
+    window.addEventListener('popstate', handlePopState);
 
-      // Use requestAnimationFrame to ensure DOM is ready
-      requestAnimationFrame(() => {
-        window.scrollTo(0, scrollY);
-        hasRestored.current = true;
-
-        // Trigger scroll events to ensure intersection observers work
-        setTimeout(() => {
-          window.dispatchEvent(new Event('scroll'));
-          // Force a resize event as well to trigger any resize-based calculations
-          window.dispatchEvent(new Event('resize'));
-        }, 100);
-      });
-    }
-
-    // Save scroll position before unload
+    // Save scroll position before unload or visibility change
     const handleBeforeUnload = () => {
       sessionStorage.setItem('scrollPosition', window.scrollY.toString());
     };
-
-    // Save scroll position on page visibility change
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'hidden') {
         sessionStorage.setItem('scrollPosition', window.scrollY.toString());
@@ -49,6 +48,7 @@ const ScrollRestorationProvider = ({ children }: ScrollRestorationProviderProps)
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
+      window.removeEventListener('popstate', handlePopState);
       window.removeEventListener('beforeunload', handleBeforeUnload);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
