@@ -17,11 +17,12 @@ const experiences = [
         description: "Core team member at WisdmLabs, leading frontend and backend development for Moodle-based e-learning solutions. Drove major product initiatives, mentored interns, and delivered high-quality features with a focus on performance and user experience.\n\nExplore my work on Moodle platforms: <a href=\"http://demo.tryremui.edwiser.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Edwiser RemUI Demo</a> | <a href=\"https://edwiser.org/page-builder-for-moodle/\" target=\"_blank\" rel=\"noopener noreferrer\">Edwiser Page Builder Demo</a>.",
         achievements: [
             "Developed and enhanced custom Moodle plugins and themes, improving platform performance and stability.",
-            "Led frontend development of the Edwiser PageBuilder plugin and independently built the WhatsApp Notifications plugin (Node.js).",
-            "Architected backend features like Course Discovery Filters and Setup Wizard for better navigation and onboarding.",
-            "Engaged directly with clients for support, troubleshooting, and product demos.",
+            "<strong>Led frontend development</strong> of the Edwiser PageBuilder plugin and independently built the <strong>WhatsApp Notifications plugin</strong>.",
+            "Architected backend features like Course Discovery Filters and Setup Wizard for better onboarding.",
+            "Engaged directly with <strong>clients for support</strong>, troubleshooting, and <strong>product demos</strong>.",
+            "<strong>Reduced average client support delivery time by 5 hours</strong>, improving response efficiency and client satisfaction.",
             "Mentored new interns and maintained the company demo site.",
-            "Consistently recognized for on-time delivery and awarded Rising Star for technical leadership."
+            "Consistently recognized for on-time delivery and awarded <strong>Rising Star</strong> for technical leadership."
         ],
         special: [
             {
@@ -49,9 +50,9 @@ const experiences = [
         duration: "9 months",
         description: "KnockOnce is a digital solutions company based in Bengaluru, India. As a Full Stack Developer Intern, I worked on both new and existing projects, collaborating with cross-functional teams to deliver production-ready features and apps.\n\nCollaborated with international teams on projects for <a href=\"https://www.zaio.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Zaio</a> (South Africa) and <a href=\"https://dy-namic.com/services.php\" target=\"_blank\" rel=\"noopener noreferrer\">Dynamic</a> (Dubai), contributing to real-world web solutions and branding platforms.",
         achievements: [
-            "Developed two food delivery apps: ZooD and Bater-Mate using React.js and Node.js, handling both frontend and backend tasks.",
+            "Developed two food delivery apps: <strong>ZooD and Bater-Mate</strong> using React.js and Node.js, handling both frontend and backend tasks.",
             "Added and modified core functionalities in several existing projects, improving performance and user experience.",
-            "Contributed to a major group project, Zaio Online Learning App, completing 5–6 small tasks and 4–5 larger features, including authentication and dashboard modules.",
+            "Contributed to a major group project, <strong>Zaio Online Learning App</strong>, completing 5–6 small tasks and 4–5 larger features, including authentication and dashboard modules.",
             "Worked closely with designers and backend developers to ensure seamless integration and delivery.",
             "Gained hands-on experience with Bootstrap, React.js, and Node.js in a fast-paced, collaborative environment."
         ],
@@ -142,22 +143,22 @@ const WorkExperience = ({ inView }: { inView: any }) => {
                             style={{}}
                         />
                         <style jsx global>{`
-                    .text-gray-600 a {
-                      color: #2563eb;
-                      text-decoration: underline;
-                      font-weight: 500;
-                      transition: color 0.2s;
-                    }
-                    .text-gray-600 a:hover {
-                      color: #1e40af;
-                    }
-                    .dark .text-gray-300 a {
-                      color: #60a5fa;
-                    }
-                    .dark .text-gray-300 a:hover {
-                      color: #3b82f6;
-                    }
-                  `}</style>
+                            .text-gray-600 a {
+                            color: #2563eb;
+                            text-decoration: underline;
+                            font-weight: 500;
+                            transition: color 0.2s;
+                            }
+                            .text-gray-600 a:hover {
+                            color: #1e40af;
+                            }
+                            .dark .text-gray-300 a {
+                            color: #60a5fa;
+                            }
+                            .dark .text-gray-300 a:hover {
+                            color: #3b82f6;
+                            }
+                        `}</style>
 
                         {/* Special Achievements (badges/callouts) */}
                         {exp.special && (
@@ -179,7 +180,7 @@ const WorkExperience = ({ inView }: { inView: any }) => {
                             <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">Key Achievements</h4>
                             <ul className="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300 text-sm">
                                 {exp.achievements.map((ach, i) => (
-                                    <li key={i}>{ach}</li>
+                                    <li key={i} dangerouslySetInnerHTML={{ __html: ach }} />
                                 ))}
                             </ul>
                         </div>

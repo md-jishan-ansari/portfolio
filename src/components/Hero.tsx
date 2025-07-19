@@ -67,8 +67,10 @@ const Hero = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              A passionate Full Stack Developer specializing in Next.js, React.js, Node.js, and Express.js.
-              I create modern, scalable web applications with a focus on user experience and performance.
+              {/* A passionate Full Stack Developer specializing in Next.js, React.js, Node.js, and Express.js.
+              I create modern, scalable web applications with a focus on user experience and performance. */}
+              Full Stack Developer passionate about building fast, scalable web apps. My core expertise lies in Next.js,
+              React.js, Node.js, and Express.js, complemented by experience with additional modern tools and backend technologies.
             </motion.p>
 
             <motion.div
