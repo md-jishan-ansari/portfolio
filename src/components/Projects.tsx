@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
-import { ExternalLink, Github, Code, Palette, Mail } from 'lucide-react';
+import { ExternalLink, Github, Code, Palette, Mail, Star } from 'lucide-react';
 import Image from 'next/image';
 
 const Projects = () => {
@@ -15,6 +15,7 @@ const Projects = () => {
     {
       slug: "technotes4u",
       title: "TechNotes4U",
+      featured: true,
       description: "A modern blogging and knowledge-sharing platform for developers with advanced content management and community features.",
       image: "/images/technotes4u.png",
       liveUrl: "https://technotes4u.com/",
@@ -25,6 +26,7 @@ const Projects = () => {
     {
       slug: "shantailor",
       title: "ShanTailor",
+      featured: true,
       description: "A modern custom tailoring and design management platform with robust backend API and beautiful responsive frontend.",
       image: "/images/shantailors.png",
       liveUrl: "http://shantailors.in",
@@ -78,6 +80,9 @@ const Projects = () => {
     }
   ];
 
+  const featuredProjects = projects.filter(p => p.featured);
+  const otherProjects = projects.filter(p => !p.featured);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -110,7 +115,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Featured <span className="gradient-text">Projects</span>
+            <span className="gradient-text">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" />
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-3xl mx-auto">
@@ -119,141 +124,298 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {projects.map((project) => (
-            <motion.div
-              key={project.title}
-              variants={itemVariants}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+        {/* Featured Projects Section */}
+        {featuredProjects.length > 0 && (
+          <section className="mb-20">
+            <motion.h3
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8 }}
+              className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-2"
             >
-              {/* Project Image */}
-              <div className="relative overflow-hidden">
-                <motion.a
-                  href={`/projects/${project.slug}`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="block cursor-pointer"
+              <Star className="h-7 w-7 text-yellow-400" />
+              Featured Projects
+            </motion.h3>
+            <motion.div
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={containerVariants}
+              className="grid md:grid-cols-2 gap-8"
+            >
+              {featuredProjects.map((project) => (
+                <motion.div
+                  key={project.title}
+                  variants={itemVariants}
+                  className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/40 dark:to-purple-900/40 border-2 border-yellow-400 dark:border-yellow-500 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group relative"
                 >
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width="500"
-                    height="500"
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    unoptimized
-                  />
-                </motion.a>
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
-                    {project.category}
+                  {/* Featured Badge */}
+                  <span className="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-white text-xs font-bold rounded-full z-10 flex items-center gap-1">
+                    <Star className="h-4 w-4" /> Featured
                   </span>
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-3 sm:p-6 flex flex-col h-[calc(100%-12rem)]">
-                <motion.a
-                  href={`/projects/${project.slug}`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="cursor-pointer"
-                >
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                </motion.a>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
-                    <Code className="h-4 w-4 mr-1" />
-                    Technologies
-                  </h4>
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
-                        +{project.technologies.length - 4} more
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Key Features */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
-                    <Palette className="h-4 w-4 mr-1" />
-                    Key Features
-                  </h4>
-                  <ul className="space-y-1">
-                    {project.features.slice(0, 3).map((feature, idx) => (
-                      <li key={idx} className="text-gray-600 dark:text-gray-300 text-xs flex items-start">
-                        <span className="text-blue-600 dark:text-blue-400 mr-1 mt-1">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                    {project.features.length > 3 && (
-                      <li className="text-blue-600 dark:text-blue-400 text-xs">
-                        +{project.features.length - 3} more features
-                      </li>
-                    )}
-                  </ul>
-                </div>
-
-                {/* Project Links */}
-                <div className="flex flex-wrap gap-3 mt-auto">
-                  <motion.a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 bg-gradient-to-r min-w-[150px] from-blue-600 to-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg text-center hover:shadow-lg transition-all duration-300 flex items-center justify-center"
-                  >
-                    <ExternalLink className="h-4 w-4 mr-1" />
-                    Live Demo
-                  </motion.a>
-                  {project?.githubUrl && (
+                  {/* Project Image */}
+                  <div className="relative overflow-hidden">
                     <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 flex items-center justify-center"
+                      href={`/projects/${project.slug}`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="block cursor-pointer"
                     >
-                      <Github className="h-4 w-4" />
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width="600"
+                        height="350"
+                        className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                        unoptimized
+                      />
                     </motion.a>
-                  )}
-
-                  <motion.a
-                    href={`/projects/${project.slug}`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="ml-auto bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-300 flex items-center justify-center"
-                  >
-                    Details
-                  </motion.a>
-                </div>
-              </div>
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  {/* Project Content */}
+                  <div className="p-6 flex flex-col h-full">
+                    <motion.a
+                      href={`/projects/${project.slug}`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="cursor-pointer"
+                    >
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                    </motion.a>
+                    <p className="text-gray-700 dark:text-gray-200 text-base mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    {/* Technologies */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
+                        <Code className="h-4 w-4 mr-1" />
+                        Technologies
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {project.technologies.slice(0, 6).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 6 && (
+                          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
+                            +{project.technologies.length - 6} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    {/* Key Features */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
+                        <Palette className="h-4 w-4 mr-1" />
+                        Key Features
+                      </h4>
+                      <ul className="space-y-1">
+                        {project.features.slice(0, 4).map((feature, idx) => (
+                          <li key={idx} className="text-gray-700 dark:text-gray-200 text-xs flex items-start">
+                            <span className="text-blue-600 dark:text-blue-400 mr-1 mt-1">•</span>
+                            {feature}
+                          </li>
+                        ))}
+                        {project.features.length > 4 && (
+                          <li className="text-blue-600 dark:text-blue-400 text-xs">
+                            +{project.features.length - 4} more features
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                    {/* Project Links */}
+                    <div className="flex flex-wrap gap-3">
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 bg-gradient-to-r min-w-[150px] from-blue-600 to-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg text-center hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                      >
+                        <ExternalLink className="h-4 w-4 mr-1" />
+                        Live Demo
+                      </motion.a>
+                      {project?.githubUrl && (
+                        <motion.a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 flex items-center justify-center"
+                        >
+                          <Github className="h-4 w-4" />
+                        </motion.a>
+                      )}
+                      <motion.a
+                        href={`/projects/${project.slug}`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="ml-auto bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-300 flex items-center justify-center"
+                      >
+                        Details
+                      </motion.a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
+          </section>
+        )}
+
+        {/* Other Projects Section */}
+        {otherProjects.length > 0 && (
+          <section>
+            <motion.h3
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8 }}
+              className="text-2xl md:text-3xl font-bold mb-8"
+            >
+              Other Projects
+            </motion.h3>
+            <motion.div
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={containerVariants}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {otherProjects.map((project) => (
+                <motion.div
+                  key={project.title}
+                  variants={itemVariants}
+                  className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                >
+                  {/* Project Image */}
+                  <div className="relative overflow-hidden">
+                    <motion.a
+                      href={`/projects/${project.slug}`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="block cursor-pointer"
+                    >
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width="500"
+                        height="500"
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        unoptimized
+                      />
+                    </motion.a>
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  {/* Project Content */}
+                  <div className="p-3 sm:p-6 flex flex-col h-[calc(100%-12rem)]">
+                    <motion.a
+                      href={`/projects/${project.slug}`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="cursor-pointer"
+                    >
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                    </motion.a>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    {/* Technologies */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
+                        <Code className="h-4 w-4 mr-1" />
+                        Technologies
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {project.technologies.slice(0, 4).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 4 && (
+                          <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
+                            +{project.technologies.length - 4} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    {/* Key Features */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
+                        <Palette className="h-4 w-4 mr-1" />
+                        Key Features
+                      </h4>
+                      <ul className="space-y-1">
+                        {project.features.slice(0, 3).map((feature, idx) => (
+                          <li key={idx} className="text-gray-600 dark:text-gray-300 text-xs flex items-start">
+                            <span className="text-blue-600 dark:text-blue-400 mr-1 mt-1">•</span>
+                            {feature}
+                          </li>
+                        ))}
+                        {project.features.length > 3 && (
+                          <li className="text-blue-600 dark:text-blue-400 text-xs">
+                            +{project.features.length - 3} more features
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                    {/* Project Links */}
+                    <div className="flex flex-wrap gap-3 mt-auto">
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 bg-gradient-to-r min-w-[150px] from-blue-600 to-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg text-center hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                      >
+                        <ExternalLink className="h-4 w-4 mr-1" />
+                        Live Demo
+                      </motion.a>
+                      {project?.githubUrl && (
+                        <motion.a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 flex items-center justify-center"
+                        >
+                          <Github className="h-4 w-4" />
+                        </motion.a>
+                      )}
+                      <motion.a
+                        href={`/projects/${project.slug}`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="ml-auto bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-300 flex items-center justify-center"
+                      >
+                        Details
+                      </motion.a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </section>
+        )}
 
         {/* Call to Action */}
         <motion.div
