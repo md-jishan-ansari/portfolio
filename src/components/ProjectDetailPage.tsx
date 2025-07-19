@@ -85,7 +85,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
         {/* Video Section */}
         {videoType !== 'none' && videoSrc && (
           <div className="flex flex-col items-center">
-            <div className="w-full aspect-video mb-4 sm:mb-6 rounded-xl overflow-hidden shadow-lg">
+            <div className="w-full aspect-video max-h-[75vh] mb-4 sm:mb-6 rounded-xl overflow-hidden shadow-lg">
               {videoType === 'local' ? (
                 <video
                   src={videoSrc}
