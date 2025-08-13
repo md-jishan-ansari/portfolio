@@ -2,16 +2,14 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useScrollAwareInView } from '@/lib/hooks/useScrollAwareInView';
-import { ExternalLink, Github, Code, Palette, Mail, Star, ArrowRight, Sparkles, Zap, Play, Eye, Layers, Globe, Rocket, Zap as ZapIcon } from 'lucide-react';
+import { Github, Code, Palette, Mail, Star, ArrowRight, Sparkles, Zap, Play, Eye, Layers, Globe, Rocket, Zap as ZapIcon } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const Projects = () => {
   const [ref, inView] = useScrollAwareInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-  const [activeProject, setActiveProject] = useState<string | null>(null);
 
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -245,8 +243,6 @@ const Projects = () => {
                     key={project.title}
                     variants={itemVariants}
                     className={`relative group bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/30 dark:border-slate-700/60 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden hover:-translate-y-2 p-6 sm:p-8 lg:p-8 lg:bg-white/70 lg:border-white/30 lg:dark:bg-slate-800/70 lg:dark:border-slate-700/60 lg:hover:shadow-2xl lg:hover:-translate-y-2`}
-                    onHoverStart={() => setActiveProject(project.slug)}
-                    onHoverEnd={() => setActiveProject(null)}
                   >
                     {/* Responsive Layout Container */}
                     <div className={`flex flex-col ${
@@ -477,8 +473,6 @@ const Projects = () => {
                     key={project.title}
                     variants={itemVariants}
                     className="group relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/30 dark:border-slate-700/60 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden hover:-translate-y-2"
-                    onHoverStart={() => setActiveProject(project.slug)}
-                    onHoverEnd={() => setActiveProject(null)}
                   >
                     {/* Enhanced Project Image */}
                     <div className="relative aspect-[4/3] overflow-hidden">
@@ -632,7 +626,7 @@ const Projects = () => {
                 </h3>
               </div>
               <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-3xl text-lg leading-relaxed">
-                Let's discuss your next project and bring your ideas to life with cutting-edge technology and exceptional user experience.
+                Let&apos;s discuss your next project and bring your ideas to life with cutting-edge technology and exceptional user experience.
               </p>
               <motion.a
                 href="/contact"
