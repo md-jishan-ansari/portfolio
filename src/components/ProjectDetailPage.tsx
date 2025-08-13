@@ -159,14 +159,16 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
           </div>
 
           {/* Security, Error Handling & Performance Section - List Rich */}
+          {security.length > 0 && (
           <div className="mb-8 sm:mb-10">
             <h2 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900 dark:text-white">Security, Error Handling & Performance</h2>
             <ul className="list-disc pl-4 sm:pl-6 space-y-1 text-sm sm:text-base text-gray-700 dark:text-gray-300">
               {security.map((item, idx) => (
                 <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          </div>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </section>

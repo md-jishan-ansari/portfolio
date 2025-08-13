@@ -12,6 +12,7 @@ const Projects = () => {
   });
 
   const projects = [
+    
     {
       slug: "technotes4u",
       title: "TechNotes4U",
@@ -33,6 +34,18 @@ const Projects = () => {
       technologies: ["Next.js", "React", "Redux Toolkit", "Node.js", "Express", "Prisma ORM", "JWT", "Stripe", "Nodemailer"],
       features: ["Authentication & User Management", "Design & Category Management", "Pricing Tools", "Service Offerings", "Admin Panel"],
       category: "Business Platform"
+    },
+    {
+      slug: "richer-editor",
+      title: "Richer Editor",
+      featured: true,
+      description: "A modern, customizable React and Next.js rich text editor built on top of Tiptap and ProseMirror. Delivers a fast, extensible, and lightweight WYSIWYG experience.",
+      image: "/images/richer-editor.png",
+      liveUrl: "https://www.npmjs.com/package/richer-editor",
+      githubUrl: "https://github.com/md-jishan-ansari/richer-editor",
+      technologies: ["React", "Next.js", "TypeScript", "Tiptap", "ProseMirror", "Tailwind CSS", "NPM Package"],
+      features: ["WYSIWYG Editing", "Code Block Support", "Customizable Extensions", "TypeScript Support"],
+      category: "NPM Package"
     },
     {
       slug: "ecommerse",
